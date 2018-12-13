@@ -1,0 +1,22 @@
+create table  if not exists employees(
+	seqno serial ,
+	create_user VARCHAR(10) default 'SYSTEM',
+	modify_user VARCHAR(10) default 'SYSTEM',
+	create_date TIMESTAMP default now(),
+	modify_date TIMESTAMP default now(),
+	permision VARCHAR(500),
+	last_name VARCHAR(20),
+	first_name VARCHAR(20),
+	birth VARCHAR(10),
+	tel VARCHAR(20),
+	addr VARCHAR(50),	
+	school VARCHAR(10),
+	account VARCHAR(150),
+	password VARCHAR(300),
+	persion_id VARCHAR(10),
+	dept_cd VARCHAR(50)
+)
+
+insert into employees (last_name,first_name,account,password) values ('SYSTEM','','admin','168FE0F5DF51645AB0BFEA31B86283603833133CDD5DE2FF9F937222F13F723B')
+
+create sequence seq_employees increment by 1 minvalue 10001 maxvalue 99999 start with 10001 no cycle ;
