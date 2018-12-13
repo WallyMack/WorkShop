@@ -4,6 +4,7 @@ services:
 
   db:
     image: postgres
+    hostname: db
     restart: always
     environment:
       POSTGRES_PASSWORD: example
@@ -13,3 +14,14 @@ services:
       - "22500:22"
       - "5430:5432"
   
+  dbadmin:
+    image: dpage/pgadmin4
+    hostname: dbadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: mack@freedomaws.com
+      PGADMIN_DEFAULT_PASSWORD: example
+    volumes:
+      - ./postadmin:/var/lib/pgadmin
+    ports:
+      - "4480:80"
