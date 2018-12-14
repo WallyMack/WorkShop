@@ -2,17 +2,16 @@ version: '3.1'
 
 services:
 
-  db:
-    image: postgres
-    hostname: db
+  erpdb:
+    image: wallymack/postgre
+    hostname: erpdb
     restart: always
     environment:
       POSTGRES_PASSWORD: example
     volumes:
-      - ./ERP/postdata:/var/lib/postgresql/data
+      - ./workshopdb/postdata:/var/lib/postgresql/data
     ports:
-      - "22500:22"
-      - "5430:5432"
+      - "15432:5432"
   
   dbadmin:
     image: dpage/pgadmin4
@@ -22,6 +21,6 @@ services:
       PGADMIN_DEFAULT_EMAIL: mack@freedomaws.com
       PGADMIN_DEFAULT_PASSWORD: example
     volumes:
-      - ./ERP/postadmin:/var/lib/pgadmin
+      - ./workshopdb/postadmin:/var/lib/pgadmin
     ports:
       - "4480:80"
