@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>Test</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    
+    <link rel="stylesheet" href="./public/css/myCss.css">
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $.get('http://127.0.0.1:3000/',function(data){
+        console.log(data);
+        var str = '<ul>';
+        data.forEach( row =>{
+          str += `<li>${row.name}`
+          if(row.branch && row.branch.length > 0){
+            str += '<ul>'
+            row.branch.forEach( r2 =>{
+              str += `<li>${r2.name}</li>`
+            })
+            str += '</ul>'
+          }
+          str += '</li>'
+        })
+
+        str += '<ul>';
+        $(".aa").append(str);
+
+      })
+
+    });
+
+    </script>
+  </head>
+<body>
+  
+  <div class="myNav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="menu_icon">
+        <img border="0" class="menu_icon_image"></img>
+        <spen class="menu_icon_text">NAME</spen>
+      </div>
+      <ul class="drop-down-menu">
+        
+        <li>
+          <spen href="#">測試測試</spen>
+          <ul>
+            <li>
+              <spen href="#">服務據點服務據點服務據點服務據點服務據點</spen>
+              <ul>
+                <li><a href="#">服務據點</a></li>
+                <li><a href="#">服務客戶</a></li>
+                <li><a href="#">服務地區</a></li>
+                <li><a href="#">徵才資訊</a></li>
+              </ul>
+            </li>
+            <li><a href="#">服務客戶</a></li>
+            <li><a href="#">服務地區</a></li>
+            <li><a href="#">徵才資訊</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <spen href="#">ABCDEFG</spen>
+          <ul>
+            <li><a href="#">服務據點服務據點服務據點服務據點服務據點</a></li>
+            <li><a href="#">服務客戶</a></li>
+            <li><a href="#">服務地區</a></li>
+            <li><a href="#">徵才資訊</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+        
+    </nav>
+  </div>
+
+  <ul class="drop-down-menu">
+        <li>
+          <a  href="#">A</a>
+          <ul>
+            <li><a  href="#">服務據點</a></li>
+            <li><a  href="#">服務客戶</a></li>
+            <li><a  href="#">服務地區</a></li>
+            <li><a  href="#">徵才資訊</a></li>
+          </ul>
+        </li>
+        <li>
+          <a  href="#">B</a>
+          <ul>
+            <li>
+              <a  href="#">系統整合</a>
+              <ul>
+                <li>
+                   <a  href="#">Magento與POS訂單系統整合</a>
+                  <ul>
+                    <li><a   href="#">Magento與CRM客戶管理系統整合</a></li>
+                    <li><a  href="#">Magento與ERP管理系統整合</a></li>
+                    <li><a  href="#">Magento金流串接服務</a></li>
+                  </ul>
+                </li>
+                <li><a  href="#">Magento與CRM客戶管理系統整合</a></li>
+                <li><a  href="#">Magento與ERP管理系統整合</a></li>
+                <li>
+                   <a  href="#">DD</a>
+                  <ul>
+                    <li>
+                       <a  href="#">DDD</a>
+                      <ul>
+                        <li>
+                           <a  href="#">DDDD</a>
+                          <ul>
+                            <li>
+                               <a  href="#">DDDDD</a>
+                              <ul>
+                                <li><a  href="#">DDDDDD</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+               <a  href="#">專業網頁設計</a>
+              <ul>
+                <li><a  href="#">響應式網頁設計 (Responsive Web Design)</a> </li>
+                <li><a  href="#">手機網站設計</a> </li>
+                <li><a  href="#">WordPress 網頁設計</a> </li>
+              </ul>
+            </li>
+            <li>
+               <a  href="#">網路行銷服務</a>
+              <ul>
+                <li><a  href="#">Amazon亞馬遜網路商城</a></li>
+                <li><a  href="#">社群媒體行銷</a></li>
+                <li>
+                   <a  href="#">SEO 搜尋引擎優化</a>
+                  <ul>
+                    <li><a  href="#">在地SEO</a></li>
+                    <li><a  href="#">SEO 搜尋引擎優化</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a  href="#">網站客製開發</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+</body>
+</html>
